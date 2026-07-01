@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "default_topics": [
+    {
+      "id": "pcb",
+      "name": "PCB",
+      "enabled": true,
+      "keywords": [
+        "PCB", "印制电路板", "印刷电路板", "高多层板", "HDI",
+        "IC载板", "ABF载板", "覆铜板", "CCL", "玻纤布",
+        "铜箔", "树脂", "腾辉电子", "生益科技", "深南电路",
+        "沪电股份", "景旺电子", "奥士康", "胜宏科技", "兴森科技",
+        "鹏鼎控股", "东山精密", "方正科技", "超声电子",
+        "PCB涨价", "PCB扩产", "PCB订单"
+      ]
+    },
+    {
+      "id": "storage",
+      "name": "存储芯片",
+      "enabled": true,
+      "keywords": [
+        "存储芯片", "存储器", "DRAM", "NAND Flash", "HBM",
+        "DDR5", "GDDR7", "eMMC", "UFS", "SSD",
+        "NOR Flash", "3D NAND", "CXL内存", "存算一体",
+        "长江存储", "长鑫存储", "兆易创新", "北京君正",
+        "澜起科技", "聚辰股份", "东芯股份", "普冉股份",
+        "存储涨价", "存储扩产", "存储周期", "存储供需"
+      ]
+    }
+  ],
+  "extra_topics": [],
+  "expansion_rules": [
+    "extra_topics 用于用户手工扩展新主题，格式与 default_topics 一致",
+    "扩展时需指定 id、name、enabled 和 keywords，keywords 应覆盖公司名、产品名和事件关键词",
+    "分析师研报关键词、卖方观点关键词可按需加入 but 注意控制噪音",
+    "主题间若有交叉（如 ABF 载板同时属于 PCB 和先进封装），优先归入最先匹配的主题"
+  ]
+}

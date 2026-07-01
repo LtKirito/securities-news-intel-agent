@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Securities Daily Workflow Plan",
+  "type": "object",
+  "required": ["run_id", "user_id", "date", "date_window", "start_stage", "enabled_sectors", "collection_modes", "required_artifacts", "quality_gates"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "user_id": {"type": "string"},
+    "date": {"type": "string"},
+    "date_window": {"type": "string"},
+    "start_stage": {"type": "string", "enum": ["source_research", "news_dedup", "priority_rating", "trend_analysis", "report_format"]},
+    "enabled_sectors": {"type": "array", "items": {"type": "string"}},
+    "collection_modes": {
+      "type": "array",
+      "items": {"type": "string", "enum": ["automatic_search", "configured_sources", "manual_links"]}
+    },
+    "required_artifacts": {"type": "array", "items": {"type": "string"}},
+    "quality_gates": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  }
+}

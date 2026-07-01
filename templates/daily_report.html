@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>证券产业新闻情报日报 | {{DATE}}</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1a1a2e; --muted: #6b7280;
+    --p0-bg: #fef2f2; --p0-border: #dc2626;
+    --p1-bg: #fffbeb; --p1-border: #d97706;
+    --p2-bg: #f0fdf4; --p2-border: #16a34a;
+    --noise-bg: #f3f4f6; --noise-border: #9ca3af;
+    --card-bg: #f9fafb;
+    --sentiment-bullish: #dc2626;
+    --sentiment-bearish: #16a34a;
+    --sentiment-neutral: #6b7280;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; max-width: 860px; margin: 0 auto; padding: 24px 16px 80px; }
+  h1 { font-size: 1.6rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 12px; margin-bottom: 20px; }
+  h2 { font-size: 1.2rem; margin: 28px 0 12px; padding-left: 8px; border-left: 3px solid #2563eb; }
+  h3 { font-size: 1rem; margin: 16px 0 8px; }
+  .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 20px; }
+  .meta span { margin-right: 16px; }
+  .conclusions { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 14px 18px; margin-bottom: 24px; }
+  .conclusions ul { margin: 8px 0 0 18px; }
+  .conclusions li { margin-bottom: 6px; }
+
+  /* --- Signal card — P0/P1/P2 统一卡片风格 --- */
+  .signal-card { border: 1px solid #e5e7eb; border-radius: 6px; padding: 14px 18px; margin-bottom: 14px; }
+  .signal-card.P0 { background: var(--p0-bg); border-color: var(--p0-border); }
+  .signal-card.P1 { background: var(--p1-bg); border-color: var(--p1-border); }
+  .signal-card.P2 { background: var(--p2-bg); border-color: var(--p2-border); }
+  .signal-card .rank { display: inline-block; font-weight: 700; font-size: 0.8rem; padding: 2px 8px; border-radius: 3px; margin-right: 8px; }
+  .rank.P0 { background: #991b1b; color: #fff; }
+  .rank.P1 { background: #92400e; color: #fff; }
+  .rank.P2 { background: #166534; color: #fff; }
+  .score-row { display: flex; align-items: flex-start; gap: 10px; margin: 8px 0; flex-wrap: wrap; }
+  .score-row .score-bar { margin: 0; flex: 1 1 520px; }
+  .score-explain { position: relative; flex: 0 0 auto; font-size: 0.78rem; color: #374151; }
+  .score-explain summary { cursor: pointer; list-style: none; background: #fff; border: 1px solid #e5e7eb; border-radius: 3px; padding: 1px 8px; }
+  .score-explain summary::-webkit-details-marker { display: none; }
+  .score-explain[open] .details-content { position: absolute; right: 0; z-index: 2; width: min(420px, 82vw); margin-top: 6px; padding: 10px 12px; background: #fff; border: 1px solid #e5e7eb; border-radius: 6px; color: #374151; line-height: 1.6; }
+  .chain-list { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 4px; }
+  .chain-node { background: #fff; border: 1px solid #fecaca; border-radius: 4px; padding: 3px 8px; }
+  .chain-arrow { color: #991b1b; font-size: 0.82rem; }
+  .trend-direction { display: grid; gap: 6px; margin-top: 4px; }
+  .trend-row { background: #fff; border-left: 3px solid #dc2626; border-radius: 4px; padding: 6px 8px; }
+  .trend-row strong { color: #991b1b; margin-right: 4px; }
+  .explain-details { margin: 8px 0 10px; font-size: 0.86rem; }
+  .explain-details summary { cursor: pointer; color: #374151; font-weight: 600; }
+  .explain-details .details-content { margin-top: 6px; padding: 10px 12px; background: #fff; border: 1px solid #e5e7eb; border-radius: 6px; color: #374151; line-height: 1.6; }
+  .watch-signal { display: grid; gap: 6px; margin-top: 4px; }
+  .watch-row { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 8px; background: #fff; border-left: 3px solid #d97706; border-radius: 4px; padding: 6px 8px; }
+  .watch-row strong { color: #92400e; }
+  .watch-chain { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+  .watch-node { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 4px; padding: 1px 6px; }
+  .watch-arrow { color: #92400e; font-size: 0.78rem; }
+
+  /* --- 情绪标签（P0/P1/P2 都使用）--- */
+  .sentiment-tag { display: inline-block; font-weight: 600; font-size: 0.8rem; padding: 2px 8px; border-radius: 3px; margin-right: 8px; }
+  .sentiment-tag.利好 { background: #fecaca; color: var(--sentiment-bullish); }
+  .sentiment-tag.利空 { background: #bbf7d0; color: var(--sentiment-bearish); }
+  .sentiment-tag.中性 { background: #e5e7eb; color: var(--sentiment-neutral); }
+  .sentiment-tag.不确定 { background: #fef3c7; color: #92400e; }
+
+  .signal-card .title { font-weight: 700; margin: 8px 0 4px; }
+  .signal-card .summary { color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; }
+  .signal-card .section-label { font-weight: 600; font-size: 0.82rem; color: #374151; margin-top: 10px; }
+  .signal-card .section-content { font-size: 0.9rem; margin: 4px 0 8px; }
+
+  .score-bar { display: flex; gap: 12px; font-size: 0.78rem; color: var(--muted); margin: 8px 0; flex-wrap: wrap; }
+  .score-bar span { background: #e5e7eb; padding: 1px 6px; border-radius: 3px; }
+
+  .sources { font-size: 0.82rem; margin-top: 10px; }
+  .sources a { color: #2563eb; text-decoration: none; margin-right: 14px; }
+  .sources a:hover { text-decoration: underline; }
+
+  .noise-item { padding: 6px 12px; background: var(--noise-bg); border-left: 3px solid var(--noise-border); margin-bottom: 6px; font-size: 0.9rem; }
+  .noise-item .reason { color: var(--muted); font-size: 0.82rem; margin-left: 8px; }
+
+  .trend-section { display: flex; gap: 18px; flex-wrap: wrap; }
+  .trend-card { flex: 1 1 260px; background: var(--card-bg); border: 1px solid #e5e7eb; border-radius: 6px; padding: 14px 16px; }
+  .trend-card h3 { margin-top: 0; }
+
+  .tracking-item { padding: 6px 12px; border-left: 3px solid #8b5cf6; margin-bottom: 6px; font-size: 0.9rem; }
+  .tracking-item .priority { font-size: 0.75rem; color: var(--muted); }
+
+  .disclaimer { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 6px; padding: 12px 16px; margin-top: 32px; font-size: 0.82rem; color: #92400e; }
+
+  /* --- 来源统计卡片（替代原始表格）--- */
+  .source-summary { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
+  .source-badge { background: var(--card-bg); border: 1px solid #e5e7eb; border-radius: 6px; padding: 8px 14px; display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; }
+  .source-badge .src-name { font-weight: 600; }
+  .source-badge .src-type { color: var(--muted); font-size: 0.78rem; }
+  .source-badge .src-count { background: #2563eb; color: #fff; font-weight: 700; font-size: 0.78rem; border-radius: 10px; padding: 1px 8px; }
+
+  @media (max-width: 600px) {
+    body { padding: 12px 8px 60px; }
+    .trend-section { flex-direction: column; }
+    .score-bar { flex-wrap: wrap; }
+    .source-summary { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<h1>证券产业新闻情报日报 | {{DATE}}</h1>
+<div class="meta">
+  <span>覆盖窗口：{{COVERAGE}}</span>
+  <span>来源：{{SOURCES_SUMMARY}}</span>
+</div>
+
+<!-- 今日核心结论 -->
+{{#if CONCLUSIONS}}
+<h2>今日核心结论</h2>
+<div class="conclusions">
+  <ul>
+    {{#each CONCLUSIONS}}<li>{{this}}</li>{{/each}}
+  </ul>
+</div>
+{{/if}}
+
+<!-- P0 关键新闻 -->
+{{#if P0_SIGNALS}}
+<h2>P0 关键新闻</h2>
+{{#each P0_SIGNALS}}
+<div class="signal-card P0">
+  <span class="rank P0">P0</span>
+  <span class="sentiment-tag {{sentiment}}">{{sentiment}}</span>
+  <span style="font-size:0.78rem;color:#6b7280;">{{sector}} · 可信度 {{score.credibility}}/5</span>
+  <div class="title">{{title}}</div>
+  <div class="summary">{{summary}}</div>
+  <div class="score-row">
+    <div class="score-bar">
+      <span>板块影响: {{score.sector_impact}}</span>
+      <span>产业链: {{score.supply_chain_relevance}}</span>
+      <span>可信度: {{score.credibility}}</span>
+      <span>时效性: {{score.timeliness}}</span>
+      <span>趋势价值: {{score.trend_value}}</span>
+    </div>
+    {{#if p0_score_explanation}}
+    <details class="score-explain">
+      <summary>评分解释</summary>
+      <div class="details-content">{{p0_score_explanation}}</div>
+    </details>
+    {{/if}}
+  </div>
+  <div class="section-label">事实</div>
+  <div class="section-content">{{fact}}</div>
+  <div class="section-label">影响链条</div>
+  {{#if impact_chain}}
+  <div class="section-content chain-list">{{#each impact_chain}}<span class="chain-node">{{this}}</span>{{#unless @last}}<span class="chain-arrow">→</span>{{/unless}}{{/each}}</div>
+  {{else}}
+  <div class="section-content">{{why_it_matters}}</div>
+  {{/if}}
+  <div class="section-label">趋势方向</div>
+  {{#if trend_direction}}
+  <div class="section-content trend-direction">
+    {{#if trend_direction.short_term}}<div class="trend-row"><strong>短期</strong>{{trend_direction.short_term}}</div>{{/if}}
+    {{#if trend_direction.mid_term}}<div class="trend-row"><strong>中期</strong>{{trend_direction.mid_term}}</div>{{/if}}
+    {{#if trend_direction.verification}}<div class="trend-row"><strong>验证</strong>{{#each trend_direction.verification}}{{this}}{{#unless @last}}、{{/unless}}{{/each}}</div>{{/if}}
+  </div>
+  {{else}}
+  <div class="section-content">{{judgement}}</div>
+  {{/if}}
+  {{#if impact_trend_explanation}}
+  <details class="explain-details">
+    <summary>展开影响链条与趋势解释</summary>
+    <div class="details-content">{{impact_trend_explanation}}</div>
+  </details>
+  {{/if}}
+  <div class="section-label">后续跟踪</div>
+  <div class="section-content">{{follow_up}}</div>
+  {{#if sources}}
+  <div class="sources">来源：{{#each sources}}<a href="{{url}}" target="_blank">{{name}}</a>{{/each}}</div>
+  {{/if}}
+</div>
+{{/each}}
+{{/if}}
+
+<!-- P1 重点新闻 -->
+{{#if P1_SIGNALS}}
+<h2>P1 重点新闻</h2>
+{{#each P1_SIGNALS}}
+<div class="signal-card P1">
+  <span class="rank P1">P1</span>
+  <span class="sentiment-tag {{sentiment}}">{{sentiment}}</span>
+  <span style="font-size:0.78rem;color:#6b7280;">{{sector}}</span>
+  <div class="title">{{title}}</div>
+  <div class="summary">{{summary}}</div>
+  <div class="score-bar">
+    <span>板块影响: {{score.sector_impact}}</span>
+    <span>产业链: {{score.supply_chain_relevance}}</span>
+    <span>可信度: {{score.credibility}}</span>
+    <span>时效性: {{score.timeliness}}</span>
+    <span>趋势价值: {{score.trend_value}}</span>
+  </div>
+  <div class="section-label">事实</div>
+  <div class="section-content">{{fact}}</div>
+  <div class="section-label">判断</div>
+  {{#if watch_signal_view}}
+  <div class="section-content watch-signal">
+    {{#if watch_signal_view.signal_type}}<div class="watch-row"><strong>信号性质</strong><span>{{watch_signal_view.signal_type}}</span></div>{{/if}}
+    {{#if watch_signal_view.impact_direction}}<div class="watch-row"><strong>影响方向</strong><span class="watch-chain">{{#each watch_signal_view.impact_direction}}<span class="watch-node">{{this}}</span>{{#unless @last}}<span class="watch-arrow">→</span>{{/unless}}{{/each}}</span></div>{{/if}}
+    {{#if watch_signal_view.current_strength}}<div class="watch-row"><strong>当前强度</strong><span>{{watch_signal_view.current_strength}}</span></div>{{/if}}
+    {{#if watch_signal_view.upgrade_condition}}<div class="watch-row"><strong>升级条件</strong><span>{{watch_signal_view.upgrade_condition}}</span></div>{{/if}}
+  </div>
+  {{#if watch_signal_view.judgement_explanation}}
+  <details class="explain-details">
+    <summary>展开判断依据</summary>
+    <div class="details-content">{{watch_signal_view.judgement_explanation}}</div>
+  </details>
+  {{/if}}
+  {{else}}
+  <div class="section-content">{{judgement}}</div>
+  {{/if}}
+  {{#if sources}}
+  <div class="sources">来源：{{#each sources}}<a href="{{url}}" target="_blank">{{name}}</a>{{/each}}</div>
+  {{/if}}
+</div>
+{{/each}}
+{{/if}}
+
+<!-- P2 一般关注 — 改用信号卡片风格，统一带情绪标签 -->
+{{#if P2_SIGNALS}}
+<h2>P2 · 一般关注</h2>
+{{#each P2_SIGNALS}}
+<div class="signal-card P2">
+  <span class="rank P2">P2</span>
+  <span class="sentiment-tag {{sentiment}}">{{sentiment}}</span>
+  <span style="font-size:0.78rem;color:#6b7280;">{{sector}}</span>
+  <div class="title">{{title}}</div>
+  <div class="summary">{{summary}}</div>
+  <div class="score-bar">
+    <span>板块影响: {{score.sector_impact}}</span>
+    <span>产业链: {{score.supply_chain_relevance}}</span>
+    <span>可信度: {{score.credibility}}</span>
+    <span>时效性: {{score.timeliness}}</span>
+    <span>趋势价值: {{score.trend_value}}</span>
+  </div>
+  {{#if sources}}
+  <div class="sources">来源：{{#each sources}}<a href="{{url}}" target="_blank">{{name}}</a>{{/each}}</div>
+  {{/if}}
+</div>
+{{/each}}
+{{/if}}
+
+<!-- 趋势判断 -->
+<h2>趋势判断</h2>
+<div class="trend-section">
+  <div class="trend-card">
+    <h3>PCB</h3>
+    <p>{{TRENDS.PCB}}</p>
+  </div>
+  <div class="trend-card">
+    <h3>存储芯片</h3>
+    <p>{{TRENDS.STORAGE}}</p>
+  </div>
+</div>
+{{#if TRENDS.RESONANCE}}
+<div style="margin-top:14px;">
+  <div class="section-label">产业链共振点</div>
+  <ul>{{#each TRENDS.RESONANCE}}<li>{{this}}</li>{{/each}}</ul>
+</div>
+{{/if}}
+{{#if TRENDS.DIVERGENCE}}
+<div style="margin-top:14px;">
+  <div class="section-label">分歧点</div>
+  <ul>{{#each TRENDS.DIVERGENCE}}<li>{{this}}</li>{{/each}}</ul>
+</div>
+{{/if}}
+
+<!-- 噪音过滤 -->
+<h2>噪音过滤</h2>
+<p style="color:var(--muted);font-size:0.85rem;">以下信息今天被过滤，原因见说明：</p>
+{{#each NOISE_ITEMS}}
+<div class="noise-item">
+  {{item}}<span class="reason">—— {{reason}}</span>
+</div>
+{{/each}}
+
+<!-- 后续跟踪 -->
+<h2>后续跟踪清单</h2>
+{{#each TRACKING_ITEMS}}
+<div class="tracking-item">
+  <strong>{{item}}</strong>
+  <span class="priority">[{{priority}}]</span>
+  <br><span style="font-size:0.82rem;color:var(--muted);">{{reason}}</span>
+</div>
+{{/each}}
+
+<!-- 信息来源汇总 — 改用卡片式徽标，更简洁美观 -->
+<h2>信息来源</h2>
+<div class="source-summary">
+  {{#each SOURCE_COUNTS}}
+  <div class="source-badge">
+    <span class="src-name">{{name}}</span>
+    <span class="src-type">{{type}}</span>
+    <span class="src-count">{{count}}</span>
+  </div>
+  {{/each}}
+</div>
+
+<!-- 免责声明 -->
+<div class="disclaimer">
+  <strong>免责声明：</strong>本日报仅为公开信息的整理和研究参考，不构成任何具体的投资建议。
+  所有新闻内容均来自公开渠道，评级和趋势判断仅代表信息层面的分析，不代表对任何股价或证券的价格预测。
+  不建议根据信息评级买卖任何股票或 ETF。
+  过往信息不预示未来表现。
+  如有具体投资决策需求，请咨询持牌专业机构。
+</div>
+
+</body>
+</html>

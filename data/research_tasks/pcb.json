@@ -1,0 +1,33 @@
+{
+  "date": "2026-06-27",
+  "user_id": "1",
+  "date_window": "滚动24小时",
+  "sectors": ["PCB"],
+  "keywords": [
+    "PCB",
+    "印制电路板",
+    "覆铜板",
+    "CCL",
+    "HDI",
+    "IC载板",
+    "AI服务器",
+    "服务器PCB",
+    "稼动率",
+    "涨价"
+  ],
+  "max_results_per_query": 6,
+  "max_candidates": 24,
+  "runtime_sector_config": [
+    {
+      "name": "PCB",
+      "keywords": ["PCB", "印制电路板", "覆铜板", "CCL", "HDI", "IC载板", "AI服务器"],
+      "companies": ["沪电股份", "深南电路", "胜宏科技", "生益科技", "鹏鼎控股", "景旺电子", "兴森科技", "崇达技术"],
+      "watch_items": ["AI服务器需求", "高端PCB订单", "覆铜板价格", "稼动率", "扩产进度"]
+    }
+  ],
+  "display_preferences": {
+    "language": "zh-CN",
+    "market_convention": "中国金融市场：涨红跌绿",
+    "style": "投研工作台日报，事实和判断分离"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "date": "2026-06-29",
+  "title": "证券产业新闻情报日报",
+  "coverage": "2026-06-29 盘前至 11:04",
+  "sectors": ["机器人"],
+  "conclusions": [
+    "今日机器人公开信息质量偏轻，暂无 P0 级强事实。",
+    "人形机器人主线仍围绕量产、降本、应用落地三项验证。",
+    "6 月较新的主流财经来源更多是情绪与兑现窗口讨论。",
+    "旧闻和研报转载较多，需防止把预期当成事实。",
+    "后续重点看订单、交付、核心零部件和量产节点。"
+  ],
+  "signals": [
+    {
+      "rank": "P1",
+      "sentiment": "利好",
+      "sector": "机器人",
+      "title": "2026 人形机器人展望：规模化放量和商业化提速仍是主线",
+      "summary": "新华网转载中国证券报文章称，2026 年人形机器人产业将进入规模化放量关键阶段，行业关注成本下探、场景拓展和技术突破。",
+      "score": {
+        "sector_impact": 4,
+        "supply_chain_relevance": 4,
+        "credibility": 4,
+        "timeliness": 2,
+        "trend_value": 4
+      },
+      "fact": "文章围绕 2026 年人形机器人量产、成本、应用场景和核心技术展开，引用行业机构和从业者对出货规模、交付节点的判断。",
+      "verified": true,
+      "uncertainty": "发布时间为 2026-01-08，不属于今日新增事实，不能评为 P0。",
+      "watch_signal_view": {
+        "signal_type": "中期产业链信号",
+        "impact_direction": ["量产预期", "核心零部件需求", "订单/交付验证"],
+        "current_strength": "方向明确但偏展望，缺少今日新增公告验证。",
+        "upgrade_condition": "出现整机厂订单、客户交付、产能爬坡或供应链公司公告确认。",
+        "judgement_explanation": "该信号说明产业趋势仍在，但时效性不足，且多数内容为行业预测与采访观点。"
+      },
+      "sources": [
+        {
+          "name": "新华网",
+          "url": "https://www.news.cn/tech/20260108/46b1220e159d4f80bc6a4240eb3b47b5/c.html"
+        }
+      ]
+    },
+    {
+      "rank": "P1",
+      "sentiment": "不确定",
+      "sector": "机器人",
+      "title": "6-8 月机器人板块进入产业链兑现观察窗口",
+      "summary": "21 经济网 6 月 10 日文章称，机器人板块在前期上涨后回调，后续关注 Optimus 量产、国内人形机器人调价、供应链订单确认和中报验证。",
+      "score": {
+        "sector_impact": 4,
+        "supply_chain_relevance": 4,
+        "credibility": 3,
+        "timeliness": 3,
+        "trend_value": 4
+      },
+      "fact": "文章记录机器人 ETF 回调、前期涨幅、7-8 月量产节点关注、国内人形机器人调价和中报订单验证等信息。",
+      "verified": false,
+      "uncertainty": "内容包含行情与机构观点，且不是一手公告，暂列 P1。",
+      "watch_signal_view": {
+        "signal_type": "兑现窗口信号",
+        "impact_direction": ["量产节点", "供应链订单", "业绩验证"],
+        "current_strength": "验证指标清晰，但当前仍以预期和观察为主。",
+        "upgrade_condition": "7-8 月出现量产落地、订单确认、价格下降带动销量增长或中报数据印证。",
+        "judgement_explanation": "该信息适合进入后续跟踪清单，不适合作为今日 P0。"
+      },
+      "sources": [
+        {
+          "name": "21 经济网",
+          "url": "https://www.21jingji.com/article/20260610/herald/8442e558e6439b5fd8b75bc6f3021234.html"
+        }
+      ]
+    },
+    {
+      "rank": "P2",
+      "sentiment": "中性",
+      "sector": "机器人",
+      "title": "证券时报：机器人产业链曾在 6 月出现逆市活跃",
+      "summary": "证券时报 6 月 8 日报道机器人产业链逆市走高，并提到机器人产业链相关个股表现。该内容以市场表现为主，产业事实不足，降为 P2。",
+      "score": {
+        "sector_impact": 3,
+        "supply_chain_relevance": 3,
+        "credibility": 4,
+        "timeliness": 3,
+        "trend_value": 2
+      },
+      "verified": true,
+      "uncertainty": "行情信号不能单独构成产业事实。",
+      "sources": [
+        {
+          "name": "证券时报",
+          "url": "https://www.stcn.com/article/detail/3948351.html"
+        }
+      ]
+    }
+  ],
+  "noise_items": [
+    {
+      "title": "九方智投转载中信建投观点",
+      "noise_reason": "研报/观点转载，且含配置建议表述，不进入日报评级主线。"
+    },
+    {
+      "title": "股票复盘网机器人行情页面",
+      "noise_reason": "偏概念股和行情聚合，缺少新增产业事实。"
+    },
+    {
+      "title": "SMM 电机板块走强快讯",
+      "noise_reason": "以板块表现和政策红利表述为主，发布时间较早，今日边际不足。"
+    }
+  ],
+  "trends": {
+    "by_sector": {
+      "机器人": {
+        "direction": "待验证",
+        "summary": "今日缺少高等级新增事实支撑，趋势判断维持待验证。中期主线仍是人形机器人量产、降本、场景落地和供应链订单确认。",
+        "uncertainty": "短期信息更多来自预期、行情和研报转载，不能视为趋势确认。"
+      }
+    },
+    "resonance_points": [
+      "人形机器人量产预期同时指向整机、本体、减速器、伺服、电机、传感器和控制系统。",
+      "降本若能带来订单增长，将从主题预期转向供应链业绩验证。",
+      "7-8 月量产节点和中报披露可能成为后续观察窗口。"
+    ],
+    "divergence_points": [
+      "产业展望较强，但今日缺少一手公告和订单事实。",
+      "行情讨论较多，产业链兑现仍需后续数据验证。",
+      "旧闻、研报转载和 ETF 营销内容较多，信号纯度一般。"
+    ]
+  },
+  "tracking_items": [
+    {
+      "item": "整机厂量产与交付节点",
+      "priority": "高",
+      "reason": "验证机器人板块从主题预期转向产业兑现。",
+      "verification_metrics": ["量产公告", "客户名单", "交付数量", "产能爬坡节奏"],
+      "related_signal_titles": ["2026 人形机器人展望：规模化放量和商业化提速仍是主线"]
+    },
+    {
+      "item": "核心零部件订单确认",
+      "priority": "高",
+      "reason": "减速器、伺服、电机、传感器、执行器是量产传导的关键环节。",
+      "verification_metrics": ["公司公告", "中报订单", "投资者关系纪要"],
+      "related_signal_titles": ["6-8 月机器人板块进入产业链兑现观察窗口"]
+    },
+    {
+      "item": "降本是否带动需求扩大",
+      "priority": "中",
+      "reason": "价格下降只有转化为订单和交付，才构成强产业信号。",
+      "verification_metrics": ["产品价格", "销量", "客户拓展", "毛利率变化"],
+      "related_signal_titles": ["6-8 月机器人板块进入产业链兑现观察窗口"]
+    }
+  ],
+  "source_counts": [
+    {"source_name": "新华网", "source_tier": "A", "count": 1},
+    {"source_name": "21 经济网", "source_tier": "A", "count": 1},
+    {"source_name": "证券时报", "source_tier": "A", "count": 1},
+    {"source_name": "弱来源/转载", "source_tier": "C/X", "count": 3}
+  ],
+  "disclaimer": "本日报仅为公开信息整理和研究参考，不构成任何投资建议。"
+}

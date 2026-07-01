@@ -1,0 +1,109 @@
+{
+  "date": "2026-06-29",
+  "title": "证券产业新闻情报日报",
+  "coverage": "滚动24小时，2026-06-28 11:30 至 2026-06-29 11:30",
+  "sectors": ["机器人"],
+  "conclusions": [
+    "滚动24小时后，仍未发现可支撑 P0 的一手强事实。",
+    "机器人主线继续围绕真实订单、量产交付和核心零部件验证。",
+    "搜索结果以旧闻、转载和产业展望为主，时效质量偏弱。",
+    "真实订单和业绩兑现是当前最关键的筛选变量。",
+    "后续若出现公告级订单或产能验证，可进入 P0 候选。"
+  ],
+  "signals": [
+    {
+      "rank": "P1",
+      "sentiment": "利好",
+      "sector": "机器人",
+      "title": "人形机器人产业展望继续指向量产、交付和降本主线",
+      "summary": "新华网转载中国证券报文章称，2026 年人形机器人产业将进入规模化放量关键阶段，产业关注成本下探、场景拓展和技术突破。",
+      "score": {"sector_impact": 4, "supply_chain_relevance": 4, "credibility": 4, "timeliness": 1, "trend_value": 4},
+      "fact": "文章提到 2026 年人形机器人规模化放量、商业化落地、成本下降和场景拓展等方向。",
+      "verified": true,
+      "uncertainty": "来源级别较高但发布时间早于滚动24小时，且本窗口内未出现新增验证。",
+      "watch_signal_view": {
+        "signal_type": "中期产业趋势背景",
+        "impact_direction": ["量产预期", "零部件需求", "订单验证"],
+        "current_strength": "方向仍重要，但本窗口没有新增强事实。",
+        "upgrade_condition": "过去24小时内出现公司公告、客户订单、交付数量或产能爬坡确认。",
+        "judgement_explanation": "该信号不能评 P0 的核心原因是时效性不满足。它适合作为机器人板块中期跟踪框架，而不是今日新增冲击。"
+      },
+      "sources": [{"name": "新华网", "url": "https://www.news.cn/tech/20260108/46b1220e159d4f80bc6a4240eb3b47b5/c.html"}]
+    },
+    {
+      "rank": "P1",
+      "sentiment": "不确定",
+      "sector": "机器人",
+      "title": "机构与资金关注点从概念转向真实订单和业绩兑现",
+      "summary": "新浪财经文章提到，基金经理在机器人等前沿科技方向更强调真实订单支撑和业绩兑现能力，并回避纯概念炒作。",
+      "score": {"sector_impact": 3, "supply_chain_relevance": 4, "credibility": 3, "timeliness": 1, "trend_value": 4},
+      "fact": "文章指出前沿科技领域筛选逻辑更关注真实订单、业绩兑现能力，对纯概念炒作保持谨慎。",
+      "verified": false,
+      "uncertainty": "该信息对评级框架有参考价值，但不是过去24小时新事件，也不是一手产业事实。",
+      "watch_signal_view": {
+        "signal_type": "评价框架变化",
+        "impact_direction": ["概念降温", "订单筛选", "业绩验证"],
+        "current_strength": "有助于解释市场筛选标准，但不构成公司级强事实。",
+        "upgrade_condition": "机器人产业链公司披露真实订单、收入确认或客户导入进展。",
+        "judgement_explanation": "该信号更像筛选标准变化，提示后续日报应优先抓订单和业绩，而不是抓主题热度。"
+      },
+      "sources": [{"name": "新浪财经", "url": "https://finance.sina.com.cn/roll/2026-04-17/doc-inhuuimn3336289.shtml"}]
+    },
+    {
+      "rank": "P2",
+      "sentiment": "中性",
+      "sector": "机器人",
+      "title": "深圳配件厂机器人订单增长报道可作为供应链线索",
+      "summary": "21经济网曾报道深圳配件厂机器人订单增长，内容涉及人形机器人客户和产能提升，但不在滚动24小时窗口内，且需要公告或财报验证。",
+      "score": {"sector_impact": 3, "supply_chain_relevance": 4, "credibility": 3, "timeliness": 1, "trend_value": 3},
+      "sources": [{"name": "21经济网", "url": "https://www.21jingji.com/article/20260210/herald/1d7d90b80529e5f877181252757a6fdc.html"}]
+    },
+    {
+      "rank": "P2",
+      "sentiment": "中性",
+      "sector": "机器人",
+      "title": "OFweek 梳理 2025 年人形机器人订单规模",
+      "summary": "OFweek 人工智能网梳理 2025 年人形机器人订单与产业链情况，可作背景资料，但不是滚动24小时内的新事件。",
+      "score": {"sector_impact": 3, "supply_chain_relevance": 4, "credibility": 3, "timeliness": 1, "trend_value": 3},
+      "sources": [{"name": "OFweek 人工智能网", "url": "https://www.ofweek.com/ai/2026-01/ART-201700-8420-30680186.html"}]
+    }
+  ],
+  "noise_items": [
+    {"title": "开发者社区机器人周报", "noise_reason": "来源偏社区，内容为 5 月底至 6 月初汇总，明显不属于滚动24小时。"},
+    {"title": "网易号减速器订单文章", "noise_reason": "自媒体平台内容，发布时间较早，且需公告/财报验证，不能支撑 P0。"},
+    {"title": "传闻类订单文章", "noise_reason": "标题含传闻和小作文表述，缺少一手确认，按规则过滤。"}
+  ],
+  "trends": {
+    "by_sector": {
+      "机器人": {
+        "direction": "待验证",
+        "summary": "滚动24小时口径扩大了召回范围，但新增候选仍以旧闻和二次转载为主，缺少公告级订单、产能、交付或价格信号。产业主线仍在，但今日不能确认边际增强。",
+        "uncertainty": "缺少过去24小时内的一手公告和强验证。"
+      }
+    },
+    "resonance_points": [
+      "人形机器人量产预期继续牵引减速器、伺服、电机、传感器、执行器等环节。",
+      "市场关注点从概念热度转向订单和业绩兑现。",
+      "若后续出现公告级订单，可能带动上游核心零部件链条同步重估。"
+    ],
+    "divergence_points": [
+      "产业中期方向较强，但过去24小时缺少新增强事实。",
+      "主流来源与自媒体来源混杂，需警惕旧闻翻炒和标题放大。",
+      "订单、产能、交付等硬变量尚未在本窗口内形成可确认共振。"
+    ]
+  },
+  "tracking_items": [
+    {"item": "过去24小时内公告级订单", "priority": "高", "reason": "验证 P0 候选是否成立", "verification_metrics": ["公司公告", "交易所公告", "合同金额", "客户名称", "交付周期"]},
+    {"item": "整机厂量产和交付确认", "priority": "高", "reason": "验证机器人产业链放量是否兑现", "verification_metrics": ["下线数量", "交付数量", "产能爬坡", "客户验收"]},
+    {"item": "核心零部件真实需求", "priority": "高", "reason": "验证上游供应链是否受益", "verification_metrics": ["减速器订单", "执行器订单", "伺服订单", "传感器订单", "收入确认"]},
+    {"item": "中报订单与业绩兑现", "priority": "中", "reason": "验证概念到业绩的传导", "verification_metrics": ["订单", "收入", "毛利率", "机器人业务占比", "客户集中度"]}
+  ],
+  "source_counts": [
+    {"source_name": "新华网", "source_tier": "A", "count": 1},
+    {"source_name": "新浪财经", "source_tier": "A/B", "count": 1},
+    {"source_name": "21经济网", "source_tier": "A", "count": 1},
+    {"source_name": "OFweek", "source_tier": "B", "count": 1},
+    {"source_name": "社区/自媒体/传闻", "source_tier": "C/X", "count": 3}
+  ],
+  "disclaimer": "本日报仅为公开信息整理和研究参考，不构成任何投资建议。"
+}

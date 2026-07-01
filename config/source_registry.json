@@ -1,0 +1,113 @@
+{
+  "version": "1.0",
+  "sources": [
+    {
+      "name": "证券时报",
+      "tier": "A",
+      "enabled": true,
+      "type": "hybrid",
+      "search_url_template": "",
+      "index_urls": [
+        "https://www.stcn.com/",
+        "https://www.stcn.com/article/list/kx.html",
+        "https://www.stcn.com/article/list/investment.html",
+        "https://www.stcn.com/xinpi/index.html"
+      ],
+      "url_allow_patterns": ["stcn.com/article/detail/"],
+      "sector_tags": ["all"]
+    },
+    {
+      "name": "中国证券报",
+      "tier": "A",
+      "enabled": true,
+      "type": "search_page",
+      "search_url_template": "",
+      "index_urls": [],
+      "url_allow_patterns": ["cs.com.cn"],
+      "sector_tags": ["all"]
+    },
+    {
+      "name": "上海证券报",
+      "tier": "A",
+      "enabled": true,
+      "type": "search_page",
+      "search_url_template": "",
+      "index_urls": [],
+      "url_allow_patterns": ["cnstock.com/commonDetail", "m.cnstock.com/commonDetail"],
+      "sector_tags": ["all"]
+    },
+    {
+      "name": "东方财富",
+      "tier": "A",
+      "enabled": true,
+      "type": "hybrid",
+      "search_url_template": "",
+      "index_urls": [
+        "https://finance.eastmoney.com/",
+        "http://finance.eastmoney.com/a/czqyw.html",
+        "http://finance.eastmoney.com/a/cssgs.html",
+        "http://stock.eastmoney.com/news/chyyj.html",
+        "http://stock.eastmoney.com/a/czggng.html"
+      ],
+      "url_allow_patterns": ["finance.eastmoney.com/a/", "stock.eastmoney.com/a/", "emweb.securities.eastmoney.com"],
+      "sector_tags": ["all"]
+    },
+    {
+      "name": "财联社",
+      "tier": "A",
+      "enabled": true,
+      "type": "hybrid",
+      "search_url_template": "",
+      "index_urls": [
+        "https://www.cls.cn/",
+        "https://www.cls.cn/telegraph",
+        "https://www.cls.cn/finance",
+        "https://www.cls.cn/hotplate"
+      ],
+      "url_allow_patterns": ["cls.cn/detail/"],
+      "sector_tags": ["all"]
+    },
+    {
+      "name": "第一财经",
+      "tier": "A",
+      "enabled": true,
+      "type": "index_page",
+      "search_url_template": "",
+      "index_urls": [
+        "https://www.yicai.com/",
+        "https://www.yicai.com/brief/",
+        "https://www.yicai.com/news/"
+      ],
+      "url_allow_patterns": ["yicai.com/news/", "yicai.com/brief/"],
+      "sector_tags": ["all"]
+    },
+    {
+      "name": "21财经",
+      "tier": "A",
+      "enabled": true,
+      "type": "index_page",
+      "search_url_template": "",
+      "index_urls": [
+        "https://www.21jingji.com/",
+        "https://www.21jingji.com/channel/company",
+        "https://www.21jingji.com/channel/capital",
+        "https://www.21jingji.com/channel/notice/"
+      ],
+      "url_allow_patterns": ["21jingji.com/article/", "21jingji.com/timeline/"],
+      "sector_tags": ["all"]
+    }
+  ],
+  "query_terms": {
+    "max_companies": 8,
+    "max_keywords": 8,
+    "templates": [
+      "{sector}",
+      "{sector} 上市公司",
+      "{sector} 订单",
+      "{sector} 扩产",
+      "{company}",
+      "{company} {keyword}",
+      "{keyword} 上市公司"
+    ]
+  }
+}

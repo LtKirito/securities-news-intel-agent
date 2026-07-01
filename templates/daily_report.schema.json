@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Securities News Daily Report JSON Schema",
+  "type": "object",
+  "required": ["date", "title", "conclusions", "signals", "noise_items", "trends", "tracking_items"],
+  "properties": {
+    "date": {"type": "string", "description": "日期 YYYY-MM-DD"},
+    "title": {"type": "string", "description": "日报标题"},
+    "coverage": {"type": "string", "description": "覆盖窗口说明"},
+    "sources": {"type": "string", "description": "信息来源概述"},
+    "conclusions": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "今日核心结论，每条一句话"
+    },
+    "summary": {"type": "string", "description": "一句话总结全文"},
+    "body": {"type": "string", "description": "日报正文 Markdown 格式"},
+    "judgement": {"type": "string", "description": "今日最大边际变化的综合判断"},
+    "tags": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "标签列表"
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rank", "title", "summary", "score", "why", "fact", "judgement", "sources"],
+        "properties": {
+          "rank": {"type": "string", "enum": ["P0", "P1", "P2", "Noise"]},
+          "sentiment": {"type": "string", "enum": ["利好", "利空", "中性", "不确定"]},
+          "title": {"type": "string"},
+          "summary": {"type": "string"},
+          "sector": {"type": "string"},
+          "related_companies": {"type": "array", "items": {"type": "string"}},
+          "score": {
+            "type": "object",
+            "properties": {
+              "sector_impact": {"type": "integer", "minimum": 1, "maximum": 5},
+              "supply_chain_relevance": {"type": "integer", "minimum": 1, "maximum": 5},
+              "credibility": {"type": "integer", "minimum": 1, "maximum": 5},
+              "timeliness": {"type": "integer", "minimum": 1, "maximum": 5},
+              "trend_value": {"type": "integer", "minimum": 1, "maximum": 5},
+              "total": {"type": "integer"}
+            }
+          },
+          "fact": {"type": "string"},
+          "judgement": {"type": "string"},
+          "why_it_matters": {"type": "string"},
+          "impact_chain": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "P0 专用。结构化影响链条，按传导顺序排列，如 AI服务器需求 -> HBM/DRAM/NAND供需紧张 -> 存储价格/利润弹性 -> A股存储链映射"
+          },
+          "trend_direction": {
+            "type": "object",
+            "description": "P0 专用。结构化趋势方向，默认展示在趋势方向区域",
+            "properties": {
+              "short_term": {"type": "string"},
+              "mid_term": {"type": "string"},
+              "verification": {"type": "array", "items": {"type": "string"}}
+            }
+          },
+          "impact_trend_explanation": {"type": "string", "description": "P0 专用。影响链条与趋势方向的折叠解释，说明判断原因、证据和不确定性"},
+          "p0_score_explanation": {"type": "string", "description": "P0 专用。评分右侧折叠解释，逐项说明五维评分为什么足以构成 P0"},
+          "watch_signal_view": {
+            "type": "object",
+            "description": "P1 专用。将判断结构化为观察信号卡片，便于用户快速判断为什么值得看、为什么还不是 P0、后续看什么",
+            "properties": {
+              "signal_type": {"type": "string", "description": "信号性质，如中期产业链信号、政策信号、价格信号、订单信号、资金信号、区域信号"},
+              "impact_direction": {"type": "array", "items": {"type": "string"}, "description": "影响方向，按传导顺序排列 3-5 个节点"},
+              "current_strength": {"type": "string", "description": "当前强度，说明为什么值得关注但暂定 P1"},
+              "upgrade_condition": {"type": "string", "description": "升级条件，说明出现什么验证后可进入 P0 候选"},
+              "judgement_explanation": {"type": "string", "description": "折叠判断依据，说明证据强弱、为什么不是 P0、后续重点看什么"}
+            }
+          },
+          "follow_up": {"type": "string"},
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {"type": "string"},
+                "url": {"type": "string", "format": "uri"},
+                "source_tier": {"type": "string", "enum": ["S", "A", "B", "C", "X"]}
+              }
+            }
+          },
+          "verified": {"type": "boolean"},
+          "uncertainty_note": {"type": "string"},
+          "noise_reason": {"type": "string"}
+        }
+      }
+    },
+    "noise_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item": {"type": "string"},
+          "reason": {"type": "string"}
+        }
+      }
+    },
+    "trends": {
+      "type": "object",
+      "properties": {
+        "PCB": {"type": "string"},
+        "storage": {"type": "string"},
+        "resonance_points": {"type": "array", "items": {"type": "string"}},
+        "divergence_points": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "tracking_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item": {"type": "string"},
+          "reason": {"type": "string"},
+          "priority": {"type": "string", "enum": ["高", "中", "低"]}
+        }
+      }
+    }
+  }
+}

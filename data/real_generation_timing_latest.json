@@ -1,0 +1,58 @@
+{
+  "started_at": "2026-06-29T02:17:06",
+  "ended_at": "2026-06-29T02:18:51",
+  "elapsed_seconds": 105.3,
+  "run_id": "04ac6f64380747d68bd50d66ed3d0f71",
+  "report_id": 10,
+  "db_created": true,
+  "run_dir": "G:\\WorkBuddy_Agents\\securities-news-intel-agent\\data\\research_runs\\04ac6f64380747d68bd50d66ed3d0f71",
+  "report_path": "G:\\WorkBuddy_Agents\\securities-news-intel-agent\\data\\research_runs\\04ac6f64380747d68bd50d66ed3d0f71\\report.json",
+  "run_meta_path": "G:\\WorkBuddy_Agents\\securities-news-intel-agent\\data\\research_runs\\04ac6f64380747d68bd50d66ed3d0f71\\run_meta.json",
+  "status": "completed",
+  "model": "senseaudio-s2",
+  "generation_mode": {
+    "mode": "high_confidence_report",
+    "label": "正式日报",
+    "allow_llm": true,
+    "profile_status": "curated",
+    "must_disclose_limitations": false
+  },
+  "counts": {
+    "raw_results": 9,
+    "extracted_pages": 9,
+    "candidates": 9,
+    "kept_items": 8,
+    "signals": 2,
+    "sa_source_items": 8,
+    "company_hit_items": 6,
+    "p0_eligible_items": 6,
+    "search_error_count": 0
+  },
+  "title": "证券产业新闻情报日报",
+  "summary": "本期机器人板块质量门槛通过，来源以巨潮资讯、第一财经、财联社等A级来源为主。有效产业信号集中在智元第15000台具身机器人下线及具身智能一级市场融资活跃度，但缺少上市公司订单、定点、扩产、客户验证或业绩贡献披露，板块趋势仍属待验证。",
+  "conclusions": [
+    "智元第15000台通用具身机器人量产下线，提示整机量产节奏继续推进，但尚未映射到A股核心零部件公司。",
+    "具身智能在一级市场活跃度居前，反映赛道关注度较高，但向上市公司订单和收入传导仍需验证。",
+    "本期多条上市公司公告偏股权、激励、现金管理等事项，对机器人产业趋势参考价值有限。",
+    "机器人板块方向偏正面，但缺少订单、定点、扩产、客户验证和业绩贡献等强证据，确认度不足。",
+    "后续应重点跟踪供货关系确认、核心零部件订单变化、整机厂交付节奏和客户结构。"
+  ],
+  "signals": [
+    {
+      "rank": "P1",
+      "title": "AI进化速递丨智元第15000台具身机器人下线",
+      "summary": "第一财经报道称，智元第15000台通用具身机器人正式量产下线。该信息指向整机量产节奏改善，但当前输入未命中A股板块公司，且缺少订单、客户验证或供应链映射，暂不能评为P0。",
+      "sources": [
+        "第一财经"
+      ]
+    },
+    {
+      "rank": "P2",
+      "title": "财联社创投通：一级市场本周114起融资，具身智能活跃度居前",
+      "summary": "财联社统计显示，本周一级市场中具身智能活跃度居前，但未披露与机器人板块上市公司直接相关的订单、量产或业绩信息。证据更多体现一级市场热度，产业链传导仍不足。",
+      "sources": [
+        "财联社"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Securities Deduped News",
+  "type": "object",
+  "required": ["run_id", "user_id", "date", "date_window", "kept_items", "removed_items", "noise_items"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "user_id": {"type": "string"},
+    "date": {"type": "string"},
+    "date_window": {"type": "string"},
+    "kept_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "summary", "source_name", "source_tier", "url", "matched_sector", "dedup_status", "dedup_reason"],
+        "properties": {
+          "title": {"type": "string"},
+          "summary": {"type": "string"},
+          "published_at": {"type": "string"},
+          "source_name": {"type": "string"},
+          "source_tier": {"type": "string", "enum": ["S", "A", "B", "C", "X"]},
+          "url": {"type": "string"},
+          "matched_sector": {"type": "string"},
+          "matched_keywords": {"type": "array", "items": {"type": "string"}},
+          "related_companies": {"type": "array", "items": {"type": "string"}},
+          "dedup_status": {"type": "string", "enum": ["kept"]},
+          "dedup_reason": {"type": "string"},
+          "merged_sources": {"type": "array", "items": {"type": "object"}},
+          "verified": {"type": "boolean"},
+          "credibility_adjustment": {"type": "string", "enum": ["none", "up", "down"]},
+          "is_follow_up": {"type": "boolean"},
+          "follow_up_item": {"type": "string"},
+          "cross_sector_relevance": {"type": "array", "items": {"type": "string"}},
+          "access_issue": {"type": "string"}
+        }
+      }
+    },
+    "removed_items": {"type": "array", "items": {"type": "object"}},
+    "noise_items": {"type": "array", "items": {"type": "object", "required": ["item", "reason"]}}
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Securities Trends",
+  "type": "object",
+  "required": ["run_id", "user_id", "date", "trends", "tracking_items"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "user_id": {"type": "string"},
+    "date": {"type": "string"},
+    "trends": {
+      "type": "object",
+      "required": ["by_sector", "resonance_points", "divergence_points"],
+      "properties": {
+        "by_sector": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["direction", "summary", "positive_changes", "negative_changes_or_risks", "change_vs_previous", "new_variables", "verification_metrics", "key_signals"],
+            "properties": {
+              "direction": {"type": "string", "enum": ["偏强", "偏弱", "中性", "分歧加大", "待验证"]},
+              "summary": {"type": "string"},
+              "positive_changes": {"type": "array", "items": {"type": "string"}},
+              "negative_changes_or_risks": {"type": "array", "items": {"type": "string"}},
+              "change_vs_previous": {"type": "string"},
+              "new_variables": {"type": "array", "items": {"type": "string"}},
+              "verification_metrics": {"type": "array", "items": {"type": "string"}},
+              "key_signals": {"type": "array", "items": {"type": "string"}},
+              "cross_sector_links": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        },
+        "resonance_points": {"type": "array", "items": {"type": "string"}},
+        "divergence_points": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "tracking_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["sector", "item", "priority", "reason", "status", "verification_metrics"],
+        "properties": {
+          "sector": {"type": "string"},
+          "item": {"type": "string"},
+          "priority": {"type": "string", "enum": ["高", "中", "低"]},
+          "reason": {"type": "string"},
+          "status": {"type": "string", "enum": ["new", "updated", "unchanged", "pending_resolution"]},
+          "verification_metrics": {"type": "array", "items": {"type": "string"}},
+          "related_signal_titles": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "version": "1.0",
+  "primary_sources": [
+    {
+      "name": "东方财富",
+      "type": "财经门户",
+      "tier": "A",
+      "use_case": "新闻聚合、公告索引、产业新闻跟踪",
+      "noise_risk": "中"
+    },
+    {
+      "name": "雪球",
+      "type": "社区讨论",
+      "tier": "C",
+      "use_case": "弱信号、市场情绪、线索发现",
+      "noise_risk": "高"
+    },
+    {
+      "name": "新浪财经",
+      "type": "财经门户",
+      "tier": "A",
+      "use_case": "新闻快讯、行情相关事件、公司公告转载",
+      "noise_risk": "中"
+    },
+    {
+      "name": "同花顺",
+      "type": "财经门户",
+      "tier": "A",
+      "use_case": "新闻聚合、题材跟踪、公告索引",
+      "noise_risk": "中"
+    }
+  ],
+  "secondary_sources": [
+    {
+      "name": "证券时报",
+      "type": "财经媒体",
+      "tier": "A",
+      "use_case": "产业链事件、政策和公司动态",
+      "noise_risk": "低"
+    },
+    {
+      "name": "中国证券报",
+      "type": "财经媒体",
+      "tier": "A",
+      "use_case": "公司公告解读、行业政策、业绩相关报道",
+      "noise_risk": "低"
+    },
+    {
+      "name": "上海证券报",
+      "type": "财经媒体",
+      "tier": "A",
+      "use_case": "公司公告、产业链、政策信息",
+      "noise_risk": "低"
+    },
+    {
+      "name": "财联社公开网页",
+      "type": "财经媒体",
+      "tier": "A",
+      "use_case": "快速新闻和事件追踪",
+      "noise_risk": "中"
+    },
+    {
+      "name": "公司官网",
+      "type": "企业官网",
+      "tier": "S",
+      "use_case": "新品发布、产能扩张、订单、客户合作",
+      "noise_risk": "低"
+    },
+    {
+      "name": "交易所公告",
+      "type": "监管公告",
+      "tier": "S",
+      "use_case": "业绩预告、重大事项、定增、并购、投资者关系活动",
+      "noise_risk": "低"
+    },
+    {
+      "name": "公司投资者关系页面",
+      "type": "企业披露",
+      "tier": "S",
+      "use_case": "调研纪要、电话会纪要、问答内容",
+      "noise_risk": "低"
+    }
+  ],
+  "auxiliary_sources": [
+    {
+      "name": "行业媒体",
+      "tier": "B",
+      "use_case": "扩展线索与背景补充",
+      "notes": "必须核对原始来源"
+    },
+    {
+      "name": "研报摘要页面",
+      "tier": "B",
+      "use_case": "卖方观点参考",
+      "notes": "只做参考，不作事实来源"
+    }
+  ],
+  "noise_sources": [
+    {
+      "name": "股吧",
+      "tier": "X",
+      "use_case": "默认噪音",
+      "notes": "只有在与一手信息交叉验证时才保留"
+    },
+    {
+      "name": "匿名自媒体",
+      "tier": "X",
+      "use_case": "默认噪音",
+      "notes": "需极高谨慎"
+    }
+  ],
+  "collection_rules": [
+    "优先采集带原始链接的公开页面",
+    "同一事件在多个来源重复出现时，保留最早一条和最权威一条",
+    "雪球和社交内容只可用于发现线索，不可单独进入 P0",
+    "旧闻翻炒、搬运稿、标题党必须标记为 Noise",
+    "无法访问原文或正文过短的链接降低可信度"
+  ]
+}

@@ -1,0 +1,489 @@
+[
+  {
+    "case": {
+      "name": "zh_cn_robot",
+      "q": "机器人",
+      "lang": "zh",
+      "country": "cn"
+    },
+    "totalArticles": 292,
+    "count": 10,
+    "articles": [
+      {
+        "title": "没有3D打印，机器人怎么玩？",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-24T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260624/herald/7001a3db4340aa3cc0b9371ad7847391.html"
+      },
+      {
+        "title": "赛力斯机器人曝光，车企为何自研机器人？",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-23T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260623/herald/b45a4d1dafdcbda3fcee9b63a6221a10.html"
+      },
+      {
+        "title": "业绩增长放缓，机器人概念消退，九号公司还能赢得投资者信赖吗？",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-22T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260622/herald/e2e630f53bec124d4f9a3edc40ddc980.html"
+      },
+      {
+        "title": "港股“食材”上市公司万天控股跨界要做人形机器人",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-18T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260618/herald/243a978aa1919fca5227198817e7eefb.html"
+      },
+      {
+        "title": "紧跟优必选，越疆宣布将发布一款陪伴交互AI人形机器人",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-17T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260617/herald/87db12498d2132aafc0232663c82b346.html"
+      },
+      {
+        "title": "深圳地瓜机器人，拿下25亿融资",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-17T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260617/herald/bdf0188468e80bebb0f7afbf0ecfce14.html"
+      },
+      {
+        "title": "豆包回应“收费”传闻；比亚迪入局人形机器人丨新鲜早科技",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-04T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260604/herald/eb68e67c77cbe89acd5e20f45bf541bb.html"
+      },
+      {
+        "title": "专访丰元资本李强：看好中国机器人、无人机及世界模型发展",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-04T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260604/herald/c868f72a1109ebe018ea441bbfd37adb.html"
+      },
+      {
+        "title": "美两党众议员推出法案，拟禁止威胁国家安全的中国机器人",
+        "source": "美国之音中文网 (VOA)",
+        "publishedAt": "2026-06-03T19:08:42Z",
+        "url": "https://www.voachinese.com/a/moolenaar-obernolte-mcclellan-introduce-bipartisan-legislation-to-ban-dangerous-chinese-robots-20260603/8156993"
+      },
+      {
+        "title": "真健康医疗冲刺港交所，烧钱的手术机器人难掩商业化寒意",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-03T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260603/herald/cb8a4d280917f58bd308c293d5865a2d.html"
+      }
+    ]
+  },
+  {
+    "case": {
+      "name": "zh_any_robot",
+      "q": "机器人",
+      "lang": "zh"
+    },
+    "totalArticles": 292,
+    "count": 10,
+    "articles": [
+      {
+        "title": "没有3D打印，机器人怎么玩？",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-24T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260624/herald/7001a3db4340aa3cc0b9371ad7847391.html"
+      },
+      {
+        "title": "赛力斯机器人曝光，车企为何自研机器人？",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-23T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260623/herald/b45a4d1dafdcbda3fcee9b63a6221a10.html"
+      },
+      {
+        "title": "业绩增长放缓，机器人概念消退，九号公司还能赢得投资者信赖吗？",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-22T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260622/herald/e2e630f53bec124d4f9a3edc40ddc980.html"
+      },
+      {
+        "title": "港股“食材”上市公司万天控股跨界要做人形机器人",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-18T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260618/herald/243a978aa1919fca5227198817e7eefb.html"
+      },
+      {
+        "title": "紧跟优必选，越疆宣布将发布一款陪伴交互AI人形机器人",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-17T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260617/herald/87db12498d2132aafc0232663c82b346.html"
+      },
+      {
+        "title": "深圳地瓜机器人，拿下25亿融资",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-17T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260617/herald/bdf0188468e80bebb0f7afbf0ecfce14.html"
+      },
+      {
+        "title": "豆包回应“收费”传闻；比亚迪入局人形机器人丨新鲜早科技",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-04T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260604/herald/eb68e67c77cbe89acd5e20f45bf541bb.html"
+      },
+      {
+        "title": "专访丰元资本李强：看好中国机器人、无人机及世界模型发展",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-04T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260604/herald/c868f72a1109ebe018ea441bbfd37adb.html"
+      },
+      {
+        "title": "美两党众议员推出法案，拟禁止威胁国家安全的中国机器人",
+        "source": "美国之音中文网 (VOA)",
+        "publishedAt": "2026-06-03T19:08:42Z",
+        "url": "https://www.voachinese.com/a/moolenaar-obernolte-mcclellan-introduce-bipartisan-legislation-to-ban-dangerous-chinese-robots-20260603/8156993"
+      },
+      {
+        "title": "真健康医疗冲刺港交所，烧钱的手术机器人难掩商业化寒意",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-03T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260603/herald/cb8a4d280917f58bd308c293d5865a2d.html"
+      }
+    ]
+  },
+  {
+    "case": {
+      "name": "zh_cn_chip",
+      "q": "芯片",
+      "lang": "zh",
+      "country": "cn"
+    },
+    "totalArticles": 1343,
+    "count": 10,
+    "articles": [
+      {
+        "title": "5万GPU芯片大采购背后：国产巨头天数智芯浮出水面",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-24T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260624/herald/658af6707d8ad219cce6db92fa011595.html"
+      },
+      {
+        "title": "芯片巨头涨薪或推高物价，韩国央行要加息？",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-23T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260623/herald/4b332b3d3d533f1ef13bafa3bf2a4c7b.html"
+      },
+      {
+        "title": "国内最大车规实验测试中心投产，艾为电子多元赛道布局提速",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-23T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260623/herald/3d1b282ccf23e7d208380f7447ff4fb6.html"
+      },
+      {
+        "title": "第三代功率半导体，下一个存储芯片？",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-22T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260622/herald/f87c93b3880d088d1993d05b8357f0b9.html"
+      },
+      {
+        "title": "以电驭算：百年电气企业伊顿如何布局AI时代数据中心能源底座？",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-18T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260618/herald/ce7f4c3086d5cf0dff7afad011908b28.html"
+      },
+      {
+        "title": "泉州商人筹集22亿，加仓芯片装备",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-16T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260616/herald/01d7c2b929bb0c64db61d6bc0f752bb4.html"
+      },
+      {
+        "title": "美议员称AI关乎国家安全须保持领先，并关注高端芯片流向中国",
+        "source": "美国之音中文网 (VOA)",
+        "publishedAt": "2026-06-12T22:37:13Z",
+        "url": "https://www.voachinese.com/a/us-lawmakers-say-ai-is-a-national-security-issue-and-the-us-must-maintain-its-lead-20260612/8160250.html"
+      },
+      {
+        "title": "产能趋紧叠加AI需求激增，功率半导体再掀涨价潮",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-10T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260610/herald/73235aa7f581560e9ecc4e075f3579c1.html"
+      },
+      {
+        "title": "美两党议员敦促加强对华AI芯片限制 台湾据报酝酿收紧AI芯片出口管制",
+        "source": "美国之音中文网 (VOA)",
+        "publishedAt": "2026-06-09T22:02:38Z",
+        "url": "https://www.voachinese.com/a/us-taiwan-ai-chip-crackdown-20260609/8159032.html"
+      },
+      {
+        "title": "“下一个存储”？MLCC 超级周期来了吗？丨 越声投研",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-04T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260604/herald/472fe008942dc4e71172459e8714fbb9.html"
+      }
+    ]
+  },
+  {
+    "case": {
+      "name": "zh_any_chip",
+      "q": "芯片",
+      "lang": "zh"
+    },
+    "totalArticles": 1697,
+    "count": 10,
+    "articles": [
+      {
+        "title": "5万GPU芯片大采购背后：国产巨头天数智芯浮出水面",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-24T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260624/herald/658af6707d8ad219cce6db92fa011595.html"
+      },
+      {
+        "title": "芯片巨头涨薪或推高物价，韩国央行要加息？",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-23T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260623/herald/4b332b3d3d533f1ef13bafa3bf2a4c7b.html"
+      },
+      {
+        "title": "国内最大车规实验测试中心投产，艾为电子多元赛道布局提速",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-23T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260623/herald/3d1b282ccf23e7d208380f7447ff4fb6.html"
+      },
+      {
+        "title": "第三代功率半导体，下一个存储芯片？",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-22T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260622/herald/f87c93b3880d088d1993d05b8357f0b9.html"
+      },
+      {
+        "title": "以电驭算：百年电气企业伊顿如何布局AI时代数据中心能源底座？",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-18T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260618/herald/ce7f4c3086d5cf0dff7afad011908b28.html"
+      },
+      {
+        "title": "泉州商人筹集22亿，加仓芯片装备",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-16T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260616/herald/01d7c2b929bb0c64db61d6bc0f752bb4.html"
+      },
+      {
+        "title": "美议员称AI关乎国家安全须保持领先，并关注高端芯片流向中国",
+        "source": "美国之音中文网 (VOA)",
+        "publishedAt": "2026-06-12T22:37:13Z",
+        "url": "https://www.voachinese.com/a/us-lawmakers-say-ai-is-a-national-security-issue-and-the-us-must-maintain-its-lead-20260612/8160250.html"
+      },
+      {
+        "title": "产能趋紧叠加AI需求激增，功率半导体再掀涨价潮",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-10T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260610/herald/73235aa7f581560e9ecc4e075f3579c1.html"
+      },
+      {
+        "title": "美两党议员敦促加强对华AI芯片限制 台湾据报酝酿收紧AI芯片出口管制",
+        "source": "美国之音中文网 (VOA)",
+        "publishedAt": "2026-06-09T22:02:38Z",
+        "url": "https://www.voachinese.com/a/us-taiwan-ai-chip-crackdown-20260609/8159032.html"
+      },
+      {
+        "title": "“下一个存储”？MLCC 超级周期来了吗？丨 越声投研",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-04T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260604/herald/472fe008942dc4e71172459e8714fbb9.html"
+      }
+    ]
+  },
+  {
+    "case": {
+      "name": "zh_stock",
+      "q": "上市公司",
+      "lang": "zh"
+    },
+    "totalArticles": 4067,
+    "count": 8,
+    "articles": [
+      {
+        "title": "港股“食材”上市公司万天控股跨界要做人形机器人",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-18T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260618/herald/243a978aa1919fca5227198817e7eefb.html"
+      },
+      {
+        "title": "百亿国资“操盘手”就位！浦东资本接手浦东国资上市公司股权",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-18T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260618/herald/cd2543ad912260a404dcb4b08bb495dd.html"
+      },
+      {
+        "title": "《GTA 6》會延期嗎？Take-Two執行長被突襲街訪秒答上市日",
+        "source": "4Gamers",
+        "publishedAt": "2026-06-17T02:51:34Z",
+        "url": "https://www.4gamers.com.tw/news/detail/80090/gta-6-strauss-zelnick-street-interview-release-date"
+      },
+      {
+        "title": "SpaceX股票上市首日飙升，马斯克成为全球首位万亿富翁",
+        "source": "美国之音中文网 (VOA)",
+        "publishedAt": "2026-06-12T21:12:38Z",
+        "url": "https://www.voachinese.com/a/spacex-shares-soar-in-trading-debut-making-musk-the-world-s-first-trillionaire-20260612/8160241.html"
+      },
+      {
+        "title": "佛山“小巨人”金戈新材登陆北交所，导热填料稳居国内第一梯队",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-11T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260611/herald/76b3614abed3440f10f0da1634206284.html"
+      },
+      {
+        "title": "葵花药业陷“驱蚊门”：品牌被滥用，业绩与内控双重承压",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-02T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260602/herald/b031ac37e0c1d2525aa1de307eae2076.html"
+      },
+      {
+        "title": "超达装备实控人“买壳”一年首秀，被投资者敦促“快重组”",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-06-01T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260601/herald/42e7ddf65d771d713502012fb22e3c08.html"
+      },
+      {
+        "title": "珀莱雅7.79亿元控股花知晓，美妆公司“买买买”开启新叙事",
+        "source": "21st Century Business Herald ",
+        "publishedAt": "2026-05-29T00:00:00Z",
+        "url": "https://www.21jingji.com/article/20260529/herald/1e2f3c91477e3244d50c8f86497c8786.html"
+      }
+    ]
+  },
+  {
+    "case": {
+      "name": "en_ai_chip",
+      "q": "AI chip",
+      "lang": "en"
+    },
+    "totalArticles": 8832,
+    "count": 10,
+    "articles": [
+      {
+        "title": "Risk perception in global markets rise amid high chip demand driving up costs",
+        "source": "The Nation",
+        "publishedAt": "2026-06-27T03:56:57Z",
+        "url": "https://www.nation.com.pk/27-Jun-2026/risk-perception-global-markets-rise-amid-high-chip-demand-driving-costs"
+      },
+      {
+        "title": "Outlook For AI Chip Sector: The Party Goes On, Bigger Than Ever",
+        "source": "Seeking Alpha",
+        "publishedAt": "2026-06-26T23:08:49Z",
+        "url": "https://seekingalpha.com/article/4918179-outlook-for-ai-chip-sector-the-party-goes-on-bigger-than-ever"
+      },
+      {
+        "title": "Apple hikes prices of iPads and MacBooks by up to £300 over AI chip fears causing stock markets to t",
+        "source": "The Sun",
+        "publishedAt": "2026-06-26T22:22:05Z",
+        "url": "https://www.thesun.co.uk/money/39562296/apple-hikes-ipad-macbook-prices-ai-chip-fears-business/"
+      },
+      {
+        "title": "Commentary: Micron’s huge AI windfall is bad news for most of us",
+        "source": "CNA",
+        "publishedAt": "2026-06-26T22:00:00Z",
+        "url": "https://www.channelnewsasia.com/commentary/micron-technology-semiconductor-chip-ai-data-centre-demand-supply-6212661"
+      },
+      {
+        "title": "Stock Market Close: S&P 500, Nasdaq end lower as chip stocks extend losses",
+        "source": "Hindustan Times",
+        "publishedAt": "2026-06-26T20:42:38Z",
+        "url": "https://www.hindustantimes.com/world-news/us-news/stock-market-close-s-p-500-nasdaq-end-lower-as-chip-stocks-extend-losses-101782505500331.h"
+      },
+      {
+        "title": "S&P 500 ends lower; chips tumble and Moderna rallies",
+        "source": "MarketScreener",
+        "publishedAt": "2026-06-26T20:21:16Z",
+        "url": "https://www.marketscreener.com/news/s-p-500-ends-lower-chips-tumble-and-moderna-rallies-ce7f5fd9de80f220"
+      },
+      {
+        "title": "Tech Turmoil: AI Chip Stocks Plummet Amid Market Volatility",
+        "source": "Devdiscourse",
+        "publishedAt": "2026-06-26T20:20:37Z",
+        "url": "https://www.devdiscourse.com/article/business/3941570-tech-turmoil-ai-chip-stocks-plummet-amid-market-volatility"
+      },
+      {
+        "title": "US stocks: US market ends lower as tech stocks weigh on sentiment",
+        "source": "The Economic Times",
+        "publishedAt": "2026-06-26T20:03:00Z",
+        "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/us-stocks-us-market-ends-lower-chips-tumble-and-moderna-rallies/articleshow/1320"
+      },
+      {
+        "title": "Wall Street ends mixed; chips tumble and Moderna rallies",
+        "source": "MarketScreener",
+        "publishedAt": "2026-06-26T20:02:51Z",
+        "url": "https://www.marketscreener.com/news/wall-street-ends-mixed-chips-tumble-and-moderna-rallies-ce7f5fd9de81f62d"
+      },
+      {
+        "title": "Market Jitters: AI Chip Volatility & Healthcare Surge",
+        "source": "Devdiscourse",
+        "publishedAt": "2026-06-26T20:02:39Z",
+        "url": "https://www.devdiscourse.com/article/business/3941566-market-jitters-ai-chip-volatility-healthcare-surge"
+      }
+    ]
+  },
+  {
+    "case": {
+      "name": "en_robotics",
+      "q": "robotics",
+      "lang": "en"
+    },
+    "totalArticles": 7996,
+    "count": 10,
+    "articles": [
+      {
+        "title": "Chinese robot dog uses pulse technology for high",
+        "source": "Interesting Engineering",
+        "publishedAt": "2026-06-26T17:07:13Z",
+        "url": "https://interestingengineering.com/ai-robotics/video-robot-dog-delivers-pulse-powered-firefighting-for-safer-emergency-operations"
+      },
+      {
+        "title": "GNC's AI Drones Cut Inventory Mistakes by Catching What Workers Miss",
+        "source": "Business Insider",
+        "publishedAt": "2026-06-26T16:57:03Z",
+        "url": "https://www.businessinsider.com/gnc-corvus-robotics-warehouse-drones-ai-2026-6"
+      },
+      {
+        "title": "27 govt schools in Ludhiana to introduce AI & robotics",
+        "source": "Hindustan Times",
+        "publishedAt": "2026-06-26T16:37:34Z",
+        "url": "https://www.hindustantimes.com/cities/chandigarh-news/27-govt-schools-in-ludhiana-to-introduce-ai-robotics-101782491854909.html"
+      },
+      {
+        "title": "KULR Technology Group Reaffirms Non-Dilutive Growth Strategy, Extends At-the-Market Offering Pause T",
+        "source": "The Manila Times",
+        "publishedAt": "2026-06-26T12:47:02Z",
+        "url": "https://www.manilatimes.net/2026/06/26/tmt-newswire/globenewswire/kulr-technology-group-reaffirms-non-dilutive-growth-strategy-extends-at-th"
+      },
+      {
+        "title": "Framework Ventures unveils $400 million fund with AI and crypto focus",
+        "source": "Crypto News",
+        "publishedAt": "2026-06-26T12:02:16Z",
+        "url": "https://crypto.news/framework-ventures-unveils-400-million-fund-with-ai-and-crypto-focus/"
+      },
+      {
+        "title": "Indian Robotics Expert Becomes Judge At Prestigious US Tech Challenge",
+        "source": "Free Press Journal",
+        "publishedAt": "2026-06-26T11:59:38Z",
+        "url": "https://www.freepressjournal.in/tech/indian-robotics-expert-becomes-judge-at-prestigious-us-tech-challenge"
+      },
+      {
+        "title": "Indian robotics expert becomes judge at prestigious US tech challenge",
+        "source": "Lokmat Times",
+        "publishedAt": "2026-06-26T10:43:29Z",
+        "url": "https://www.lokmattimes.com/technology/indian-robotics-expert-becomes-judge-at-prestigious-us-tech-challenge-1/"
+      },
+      {
+        "title": "Indian robotics expert becomes judge at prestigious US tech challenge",
+        "source": "Lokmat Times",
+        "publishedAt": "2026-06-26T10:43:29Z",
+        "url": "https://www.lokmattimes.com/national/indian-robotics-expert-becomes-judge-at-prestigious-us-tech-challenge/"
+      },
+      {
+        "title": "Robotics startup FieldAI has hit a $100 million milestone",
+        "source": "Business Insider",
+        "publishedAt": "2026-06-26T10:00:01Z",
+        "url": "https://www.businessinsider.com/robot-startup-fieldai-achieves-100-m-milestone-in-revenue-contracts-2026-6"
+      },
+      {
+        "title": "India's robotics funding doubles in 2026 first-half, but scale seems far away",
+        "source": "Livemint",
+        "publishedAt": "2026-06-26T07:40:11Z",
+        "url": "https://www.livemint.com/technology/india-robotics-funding-startups-technology-government-initiatives-inflection-point-cheque-sizes-rd-11782"
+      }
+    ]
+  }
+]

@@ -1,0 +1,139 @@
+{
+  "version": "1.0",
+  "description": "证券产业新闻五维评分与 P0/P1/P2/Noise 评级规则",
+  "scoring_dimensions": [
+    {
+      "key": "sector_impact",
+      "label": "板块影响",
+      "question": "是否可能影响当前命中板块的整体预期？",
+      "range": [1, 5],
+      "guidance": {
+        "5": "直接改变供给/需求/政策/竞争格局，可能引发板块性行情",
+        "4": "对核心个股产生显著影响，但板块联动性不确定",
+        "3": "有一定行业参考意义，但边际变化不大",
+        "2": "与板块关系较弱，更多是单一公司事件",
+        "1": "与板块无关或影响极微"
+      }
+    },
+    {
+      "key": "supply_chain_relevance",
+      "label": "产业链相关性",
+      "question": "是否直接涉及当前板块的产业链关键环节、核心公司、终端需求、价格、订单、产能或政策变量？",
+      "range": [1, 5],
+      "guidance": {
+        "5": "直接涉及产业链价格、订单、产能数据",
+        "4": "涉及核心公司产线、客户或产品变动",
+        "3": "涉及产业链一般性报道或机构观点",
+        "2": "与产业链有关但间接",
+        "1": "与产业链无关"
+      }
+    },
+    {
+      "key": "credibility",
+      "label": "可信度",
+      "question": "是否来自一手来源、主流财经源或多源交叉验证？",
+      "range": [1, 5],
+      "guidance": {
+        "5": "来自公司公告、交易所公告或多源交叉验证的一致信息",
+        "4": "来自主流财经源，且源站有原文链接",
+        "3": "来自主流财经源但源站页面简短，或来自单一 B 级来源",
+        "2": "来自雪球、自媒体、论坛且无交叉验证",
+        "1": "无法确认来源、正文无法访问、旧闻翻炒、标题党"
+      }
+    },
+    {
+      "key": "timeliness",
+      "label": "时效性",
+      "question": "是否处于滚动 24 小时窗口内，或虽早于 24 小时但在窗口内出现新增验证？",
+      "range": [1, 5],
+      "guidance": {
+        "5": "滚动 12 小时内首次公开的新事件、首条报道或一手公告",
+        "4": "滚动 24 小时内发布的后续进展或权威确认",
+        "3": "滚动 24 小时内信息，但边际变化一般",
+        "2": "超过 24 小时但在窗口内出现新增验证，或仍与当前市场相关",
+        "1": "明显旧闻、重复转载，且滚动 24 小时内无新增验证"
+      }
+    },
+    {
+      "key": "trend_value",
+      "label": "趋势价值",
+      "question": "是否能改变后续跟踪方向或形成连续信号？",
+      "range": [1, 5],
+      "guidance": {
+        "5": "可能形成持续性事件链条，需要多日跟踪",
+        "4": "对现有跟踪方向提供新的证据或变量",
+        "3": "可以放入跟踪清单但优先级较低",
+        "2": "无需持续跟踪",
+        "1": "一次性事件，无后续影响"
+      }
+    }
+  ],
+  "ranking_rules": {
+    "P0": {
+      "condition": "sector_impact >= 4 AND credibility >= 4 AND trend_value >= 4 AND 具备明确边际变化",
+      "description": "关键信号：可能改变板块预期或引发产业链共振",
+      "max_per_day": 5,
+      "action": "放入日报顶部，必须写 fact、impact_chain、trend_direction、impact_trend_explanation、p0_score_explanation、follow_up、sources"
+    },
+    "P1": {
+      "condition": "total >= 16 OR (supply_chain_relevance >= 4 AND credibility >= 3)",
+      "description": "重点新闻：对产业方向有明确影响或提供重要参考信息",
+      "max_per_day": 15,
+      "action": "放入重点新闻，必须写 watch_signal_view.signal_type、impact_direction、current_strength、upgrade_condition、judgement_explanation"
+    },
+    "P2": {
+      "condition": "有参考价值但未达 P1 标准，或验证不足、边际变化较弱",
+      "description": "一般关注：有一定信息量但暂不需要重点跟踪",
+      "max_per_day": 30,
+      "action": "放入一般关注，仅记录必要性信息"
+    },
+    "Noise": {
+      "condition": "credibility <= 2 OR 与主题无关 OR 旧闻翻炒 OR 无实质信息",
+      "description": "噪音：无参考价值或高度不可靠",
+      "action": "过滤并记录原因"
+    }
+  },
+  "noise_detection": {
+    "rules": [
+      "标题党：标题明显夸大但与正文内容不符 → Noise",
+      "旧闻翻炒：正文中已有数天前日期或已被收录 → Noise",
+      "重复转载：多家媒体转载同一事件且无新增信息 → 保留最早/最权威一条",
+      "无来源：正文中无法找到可以核实的原始链接 → 降低可信度一级",
+      "纯股价描述：只写了涨了多少、资金流入多少，没有产业事实 → P2 或 Noise",
+      "无实质内容：标题有 news 但正文只有一两句泛泛而谈 → Noise",
+      "敏感争议内容：涉及政治、内幕、传谣等 → 不回写日报"
+    ]
+  },
+  "overlay_policy": {
+    "allowed": [
+      "dimension_weights",
+      "rank_thresholds",
+      "max_per_day",
+      "source_preferences",
+      "sector_specific_guidance"
+    ],
+    "hard_constraints": [
+      "不能取消公开来源要求",
+      "不能取消来源链接要求",
+      "不能允许单一论坛/股吧/社区/自媒体来源独立评为 P0",
+      "不能取消 P0 稀缺原则",
+      "不能取消禁止买卖建议、目标价、收益承诺和仓位建议",
+      "不能将 credibility <= 2 的信息评为 P0"
+    ],
+    "validation": {
+      "dimension_weights": "每个维度权重必须为正数；缺失维度使用默认权重；系统可归一化处理",
+      "rank_thresholds": "阈值必须保持 P0 严于 P1、P1 严于 P2；非法阈值回退默认值",
+      "max_per_day": "P0 单用户单板块默认上限为 5；用户可降低，不建议提高；提高必须仍经过动态收紧",
+      "source_preferences": "只能影响采集优先级，不能改变来源可信度硬规则"
+    }
+  },
+  "sentiment_labels": {
+    "rules": "基于事实判断情绪方向，不主观猜测",
+    "labels": {
+      "利好": "事实指向产业盈利能力增强、需求上升、政策放宽或供给减少利好价格上涨",
+      "利空": "事实指向产业盈利能力承压、需求下行、政策收紧或供给过剩",
+      "中性": "信息本身不包含明确方向性",
+      "不确定": "市场理解可能分歧或信息尚不完整"
+    }
+  }
+}

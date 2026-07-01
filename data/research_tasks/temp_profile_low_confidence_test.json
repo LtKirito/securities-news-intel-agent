@@ -1,0 +1,21 @@
+{
+  "date": "2026-06-27",
+  "user_id": "1",
+  "date_window": "滚动24小时",
+  "sectors": [
+    "玻璃基板"
+  ],
+  "keywords": [
+    "玻璃基板"
+  ],
+  "max_results_per_query": 3,
+  "max_candidates": 10,
+  "include_domains": [],
+  "exclude_domains": [],
+  "display_preferences": {
+    "language": "zh-CN",
+    "market_convention": "中国金融市场：涨红跌绿",
+    "style": "投研工作台日报，事实和判断分离"
+  },
+  "rating_overlay": {}
+}

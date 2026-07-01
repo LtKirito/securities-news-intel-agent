@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Securities Source Candidates",
+  "type": "object",
+  "required": ["run_id", "user_id", "date", "date_window", "sectors", "candidates", "source_counts"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "user_id": {"type": "string"},
+    "date": {"type": "string"},
+    "date_window": {"type": "string"},
+    "sectors": {"type": "array", "items": {"type": "string"}},
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "summary", "source_name", "source_tier", "url", "collection_mode", "matched_sector", "matched_keywords"],
+        "properties": {
+          "title": {"type": "string"},
+          "summary": {"type": "string"},
+          "published_at": {"type": "string"},
+          "source_name": {"type": "string"},
+          "source_tier": {"type": "string", "enum": ["S", "A", "B", "C", "X"]},
+          "url": {"type": "string"},
+          "collection_mode": {"type": "string", "enum": ["automatic_search", "configured_sources", "manual_links"]},
+          "matched_sector": {"type": "string"},
+          "matched_keywords": {"type": "array", "items": {"type": "string"}},
+          "is_primary_source": {"type": "boolean"},
+          "related_companies": {"type": "array", "items": {"type": "string"}},
+          "is_follow_up": {"type": "boolean"},
+          "follow_up_item": {"type": "string"},
+          "follow_up_update": {"type": "string"},
+          "access_issue": {"type": "string"},
+          "raw_text_excerpt": {"type": "string"}
+        }
+      }
+    },
+    "source_counts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "tier", "count"],
+        "properties": {
+          "name": {"type": "string"},
+          "tier": {"type": "string", "enum": ["S", "A", "B", "C", "X"]},
+          "count": {"type": "integer", "minimum": 0}
+        }
+      }
+    }
+  }
+}

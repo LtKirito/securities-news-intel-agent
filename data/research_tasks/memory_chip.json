@@ -1,0 +1,34 @@
+{
+  "date": "2026-06-27",
+  "user_id": "1",
+  "date_window": "滚动24小时",
+  "sectors": ["存储芯片"],
+  "keywords": [
+    "DRAM",
+    "NAND",
+    "HBM",
+    "DDR5",
+    "LPDDR",
+    "存储模组",
+    "存储控制芯片",
+    "涨价",
+    "库存",
+    "产能",
+    "业绩"
+  ],
+  "max_results_per_query": 6,
+  "max_candidates": 24,
+  "runtime_sector_config": [
+    {
+      "name": "存储芯片",
+      "keywords": ["DRAM", "NAND", "HBM", "DDR5", "LPDDR", "存储模组", "存储控制芯片"],
+      "companies": ["兆易创新", "澜起科技", "江波龙", "佰维存储", "北京君正", "德明利", "聚辰股份", "东芯股份"],
+      "watch_items": ["HBM需求", "DRAM/NAND价格", "库存周期", "国产替代", "客户验证"]
+    }
+  ],
+  "display_preferences": {
+    "language": "zh-CN",
+    "market_convention": "中国金融市场：涨红跌绿",
+    "style": "投研工作台日报，事实和判断分离"
+  }
+}

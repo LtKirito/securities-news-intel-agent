@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Securities Report Run Metadata",
+  "type": "object",
+  "required": ["run_id", "user_id", "date", "sectors", "model", "workflow_version", "config_snapshot", "agent_skill_snapshot", "artifacts", "quality_checks"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "user_id": {"type": "string"},
+    "date": {"type": "string"},
+    "sectors": {"type": "array", "items": {"type": "string"}},
+    "model": {"type": "string"},
+    "workflow_version": {"type": "string"},
+    "config_snapshot": {"type": "object"},
+    "agent_skill_snapshot": {"type": "object"},
+    "artifacts": {"type": "object"},
+    "quality_checks": {
+      "type": "object",
+      "required": ["schema_valid", "source_urls_present", "no_investment_advice", "p0_sparse_checked"],
+      "properties": {
+        "schema_valid": {"type": "boolean"},
+        "source_urls_present": {"type": "boolean"},
+        "no_investment_advice": {"type": "boolean"},
+        "p0_sparse_checked": {"type": "boolean"}
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: securities-news-intel-agent
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: APP_SECRET_KEY
+        generateValue: true
+      - key: SENSEAUDIO_BASE_URL
+        value: https://api.senseaudio.cn
+      - key: SENSEAUDIO_CHAT_ENDPOINT
+        value: /v1/chat/completions
+      - key: SENSEAUDIO_MODEL
+        value: senseaudio-s2

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Securities Rated Signals",
+  "type": "object",
+  "required": ["run_id", "user_id", "date", "signals", "noise_items"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "user_id": {"type": "string"},
+    "date": {"type": "string"},
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rank", "sentiment", "title", "summary", "sector", "score", "fact", "judgement", "sources"],
+        "properties": {
+          "rank": {"type": "string", "enum": ["P0", "P1", "P2", "Noise"]},
+          "sentiment": {"type": "string", "enum": ["利好", "利空", "中性", "不确定"]},
+          "title": {"type": "string"},
+          "summary": {"type": "string"},
+          "sector": {"type": "string"},
+          "related_companies": {"type": "array", "items": {"type": "string"}},
+          "score": {
+            "type": "object",
+            "required": ["sector_impact", "supply_chain_relevance", "credibility", "timeliness", "trend_value", "total"],
+            "properties": {
+              "sector_impact": {"type": "integer", "minimum": 1, "maximum": 5},
+              "supply_chain_relevance": {"type": "integer", "minimum": 1, "maximum": 5},
+              "credibility": {"type": "integer", "minimum": 1, "maximum": 5},
+              "timeliness": {"type": "integer", "minimum": 1, "maximum": 5},
+              "trend_value": {"type": "integer", "minimum": 1, "maximum": 5},
+              "total": {"type": "integer"}
+            }
+          },
+          "fact": {"type": "string"},
+          "judgement": {"type": "string"},
+          "why_it_matters": {"type": "string"},
+          "impact_chain": {"type": "array", "items": {"type": "string"}},
+          "trend_direction": {"type": "object"},
+          "impact_trend_explanation": {"type": "string"},
+          "p0_score_explanation": {"type": "string"},
+          "watch_signal_view": {"type": "object"},
+          "follow_up": {"type": "string"},
+          "sources": {"type": "array", "items": {"type": "object", "required": ["name", "url", "source_tier"]}},
+          "verified": {"type": "boolean"},
+          "uncertainty_note": {"type": "string"},
+          "noise_reason": {"type": "string"}
+        }
+      }
+    },
+    "noise_items": {"type": "array", "items": {"type": "object", "required": ["item", "reason"]}}
+  }
+}

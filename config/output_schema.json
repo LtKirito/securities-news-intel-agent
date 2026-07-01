@@ -1,0 +1,71 @@
+{
+  "version": "1.0",
+  "outputs": {
+    "html_daily": {
+      "path": "data/users/{user_id}/reports/{date}/{sector}/report.html",
+      "description": "面向用户阅读的 HTML 日报，含卡片、来源链接、免责声明；多人系统必须使用用户隔离路径",
+      "encoding": "UTF-8"
+    },
+    "json_daily": {
+      "path": "data/users/{user_id}/reports/{date}/{sector}/report.json",
+      "description": "供历史检索、AI 问答和趋势复盘使用的结构化日报数据",
+      "encoding": "UTF-8"
+    },
+    "run_meta": {
+      "path": "data/users/{user_id}/reports/{date}/{sector}/run_meta.json",
+      "description": "运行元数据，记录配置快照、技能快照、质量检查结果和 artifact 路径",
+      "encoding": "UTF-8"
+    },
+    "run_artifacts": {
+      "path": "data/users/{user_id}/reports/{date}/run/artifacts/",
+      "description": "跨板块中间产物目录，存放 workflow_plan、candidates、deduped_news、rated_signals、trends、source_counts",
+      "encoding": "UTF-8"
+    }
+  },
+  "news_item_schema": {
+    "rank": "P0|P1|P2|Noise",
+    "sentiment": "利好|利空|中性|不确定",
+    "title": "新闻标题",
+    "summary": "一句话摘要（最多 50 字）",
+    "sector": "当前命中板块名称，来自 sector_configs.name",
+    "related_companies": ["公司 A", "公司 B"],
+    "score": {
+      "sector_impact": "integer 1-5",
+      "supply_chain_relevance": "integer 1-5",
+      "credibility": "integer 1-5",
+      "timeliness": "integer 1-5",
+      "trend_value": "integer 1-5",
+      "total": "integer, weighted or unweighted total after rating_overlay"
+    },
+    "fact": "客观事实，不含判断",
+    "judgement": "基于事实的趋势判断，不包含买卖建议",
+    "why_it_matters": "为什么值得关注（面向个人用户的信息参考）",
+    "impact_chain": ["P0专用：按传导顺序展示影响链条"],
+    "trend_direction": {
+      "short_term": "P0专用：短期趋势方向",
+      "mid_term": "P0专用：中期趋势方向",
+      "verification": ["P0专用：后续验证指标"]
+    },
+    "impact_trend_explanation": "P0专用：影响链条和趋势方向的折叠解释",
+    "p0_score_explanation": "P0专用：评分右侧折叠解释，说明为什么五维评分达到P0",
+    "watch_signal_view": {
+      "signal_type": "P1专用：信号性质，如中期产业链信号、政策信号、价格信号、订单信号、资金信号、区域信号",
+      "impact_direction": ["P1专用：按传导顺序展示影响方向"],
+      "current_strength": "P1专用：说明为什么值得关注但暂定P1",
+      "upgrade_condition": "P1专用：说明什么条件下可升级为P0候选",
+      "judgement_explanation": "P1专用：折叠判断依据，说明证据强弱、为什么不是P0、后续看什么"
+    },
+    "follow_up": "后续需要继续跟踪的事项",
+    "sources": [
+      {
+        "name": "东方财富",
+        "url": "https://...",
+        "source_tier": "A|B|C|S|X"
+      }
+    ],
+    "verified": true,
+    "uncertainty_note": "",
+    "noise_reason": "",
+    "added_to_tracking": true
+  }
+}
