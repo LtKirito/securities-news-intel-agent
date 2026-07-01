@@ -26,7 +26,8 @@ COPY config/ /app/config/
 COPY schemas/ /app/schemas/
 COPY templates/ /app/templates/
 RUN mkdir -p /app/data
-COPY .workbuddy/system/ /app/.workbuddy/system/
+COPY skills/ /app/skills/
+COPY RULES.md MEMORY.md /app/
 COPY --from=frontend-builder /app/frontend/dist /app/frontend/dist
 
 EXPOSE 8000

@@ -1,23 +1,19 @@
 from pathlib import Path
 
-from app.core.config import AGENT_SKILLS_DIR, AGENT_SYSTEM_DIR, CONFIG_DIR, PROJECT_ROOT, SCHEMAS_DIR, TEMPLATES_DIR
+from app.core.config import CONFIG_DIR, PROJECT_ROOT, SCHEMAS_DIR, TEMPLATES_DIR
 
 
 class AgentLoader:
-    def __init__(self, project_root: Path = PROJECT_ROOT, system_root: Path = AGENT_SYSTEM_DIR):
+    def __init__(self, project_root: Path = PROJECT_ROOT):
         self.project_root = project_root
-        self.system_root = system_root
+        self.skills_root = project_root / "skills"
 
     def read_text(self, relative_path: str) -> str:
         path = self.project_root / relative_path
         return path.read_text(encoding="utf-8")
 
-    def read_system_text(self, relative_path: str) -> str:
-        path = self.system_root / relative_path
-        return path.read_text(encoding="utf-8")
-
     def load_skill(self, skill_name: str) -> str:
-        return (AGENT_SKILLS_DIR / skill_name / "SKILL.md").read_text(encoding="utf-8")
+        return (self.skills_root / skill_name / "SKILL.md").read_text(encoding="utf-8")
 
     def load_pipeline_skill(self) -> str:
         return self.load_skill("securities-daily-intel-pipeline")
@@ -33,8 +29,8 @@ class AgentLoader:
 
     def load_base_context(self) -> dict[str, str]:
         return {
-            "rules": self.read_system_text("RULES.md"),
-            "project_memory": self.read_system_text("MEMORY.md"),
+            "rules": self.read_text("RULES.md"),
+            "project_memory": self.read_text("MEMORY.md"),
             "topics": self.load_config("topics.json"),
             "sources": self.load_config("sources.json"),
             "rating_rules": self.load_config("rating_rules.json"),
